@@ -16,6 +16,7 @@
   "license": "ISC",
   "homepage": "https://github.com/AdFurdova/rest-api-mongo#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.3",
     "nodemon": "^2.0.7"

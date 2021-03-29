@@ -26,6 +26,7 @@ exports.getById = (req, res) => {
     res.status(200).send(result);
   });
 };
+
 exports.patchById = (req, res) => {
   CandidateModel.patchCandidate(req.params.candidateId, req.body).then(
     (result) => {

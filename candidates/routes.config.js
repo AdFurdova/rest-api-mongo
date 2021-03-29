@@ -6,4 +6,7 @@ exports.routesConfig = function (app) {
   app.get("/candidates/:candidateId", [CandidatesController.getById]);
   app.patch("/candidates/:candidateId", [CandidatesController.patchById]);
   app.delete("/candidates/:candidateId", [CandidatesController.deleteById]);
+  // app.get("/candidates/:candidateId/jobAds/:jobAdId", function (req, res) {
+  //   res.send(req.params);
+  // });
 };

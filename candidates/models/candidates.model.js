@@ -5,6 +5,15 @@ const candidateSchema = new Schema({
   fullName: String,
   expectedSalary: Number,
   listOfSkills: [String],
+  // appliedTo: {
+  //   type: [
+  //     {
+  //       jobAdId: String,
+  //       dateOfApplication: Date,
+  //     },
+  //   ],
+  //   default: [],
+  // },
 });
 
 candidateSchema.virtual("id").get(function () {
