@@ -40,3 +40,12 @@ exports.deleteById = (req, res) => {
     res.status(204).send({});
   });
 };
+
+exports.addJobApplication = (req, res) => {
+  CandidateModel.candidateApplied(req.params.candidateId, {
+    jobAdId: req.params.jobAdId,
+    dateOfApplication: new Date(),
+  }).then((result) => {
+    res.status(204).send({});
+  });
+};

@@ -3,6 +3,7 @@ const config = require("./common/config/env.config.js");
 const express = require("express");
 const app = express();
 const CandidatesRouter = require("./candidates/routes.config");
+const JobAdsRouter = require("./jobAds/routes.config");
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -16,9 +17,10 @@ app.use(function (req, res, next) {
   }
 });
 
-CandidatesRouter.routesConfig(app);
-
 app.use(express.json());
+
+CandidatesRouter.routesConfig(app);
+JobAdsRouter.routesConfig(app);
 
 app.listen(config.port, function () {
   console.log("app listening at port %s", config.port);

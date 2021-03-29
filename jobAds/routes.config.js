@@ -1,9 +1,9 @@
 const JobAdsController = require("./controllers/jobAds.controller");
 
 exports.routesConfig = function (app) {
-  app.post("/jobAds", [JobAdsController.insert]);
-  app.get("/jobAds", [JobAdsController.list]);
-  app.get("/jobAds/:jobAdId", [JobAdsController.getById]);
-  app.patch("/jobAds/:jobAdId", [JobAdsController.patchById]);
-  app.delete("/jobAds/:jobAdId", [JobAdsController.deleteById]);
+  app.post("/job_ads", [JobAdsController.insert]);
+  app.get("/job_ads", [JobAdsController.list]);
+  app.get("/job_ads/:jobAdId", [JobAdsController.getById]);
+  app.patch("/job_ads/:jobAdId", [JobAdsController.patchById]);
+  app.delete("/job_ads/:jobAdId", [JobAdsController.deleteById]);
 };

@@ -5,15 +5,15 @@ const candidateSchema = new Schema({
   fullName: String,
   expectedSalary: Number,
   listOfSkills: [String],
-  // appliedTo: {
-  //   type: [
-  //     {
-  //       jobAdId: String,
-  //       dateOfApplication: Date,
-  //     },
-  //   ],
-  //   default: [],
-  // },
+  appliedTo: {
+    type: [
+      {
+        jobAdId: String,
+        dateOfApplication: Date,
+      },
+    ],
+    default: [],
+  },
 });
 
 candidateSchema.virtual("id").get(function () {
@@ -65,6 +65,13 @@ exports.patchCandidate = (id, candidateData) => {
       _id: id,
     },
     candidateData
+  );
+};
+
+exports.candidateApplied = (id, jobAdData) => {
+  return Candidate.findOneAndUpdate(
+    { _id: id },
+    { $push: { appliedTo: jobAdData } }
   );
 };
 
