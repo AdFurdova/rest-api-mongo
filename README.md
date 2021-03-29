@@ -27,3 +27,7 @@ curl -X POST -H 'Content-type: application/json' -d '{"fullName": "", "expectedS
 ```
 curl -X DELETE http://localhost:3600/candidates/<candidateID>
 ```
+
+```
+curl http://localhost:3600/candidates
+```
